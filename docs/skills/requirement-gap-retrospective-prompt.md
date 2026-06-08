@@ -3,22 +3,22 @@
 在实施之后，当原始需求或原型无法完全覆盖实际交付需求时，请使用此提示。
 
 ```text
-Read the original source files under `docs/input/`, the relevant `docs/discussions/`, the final requirement files, the related design docs, the implementation plan, and the landed code/logs.
+阅读 `docs/input/` 下的原始源文件、相关的 `docs/discussions/`、最终需求文档、关联设计文档、实施计划以及已落地的代码/日志。
 
-Analyze why the original requirement baseline failed to fully cover the final implementation reality.
+分析为何最初的需求基线未能完全覆盖最终实现现实。
 
-Focus on:
-- which source inputs were incomplete
-- which assumptions remained implicit too long
-- where prototype fidelity was mistaken for requirement completeness
-- where PM-to-implementation handoff lacked intermediate analysis
-- what should move earlier into requirement synthesis or design
-- what reusable skill, audit rule, or workflow change should be created
+聚焦于：
+- 哪些源输入不完整
+- 哪些假设在过长的时间里仍处于隐式状态
+- 在何处原型保真度被误认为是需求完备性
+- 在何处产品经理到实现的交接缺少中间分析环节
+- 哪些内容应提前至需求综合或设计阶段
+- 应创建哪些可复用的技能、审计规则或工作流变更
 
-Produce a retrospective-ready analysis with:
-- summary
-- root causes
-- missed signals
-- process improvements
-- candidate reusable skills or audit prompts
+产出一份可供复盘的分析，包含：
+- 概述
+- 根因
+- 被忽略的信号
+- 流程改进
+- 候选的可复用技能或审计提示
 ```

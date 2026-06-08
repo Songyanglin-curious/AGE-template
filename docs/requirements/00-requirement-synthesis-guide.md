@@ -47,23 +47,21 @@
 ## 最小需求骨架
 
 ```md
-# Feature: <name>
+# 特性：<name>
 
-## Goal
+## 目标
 
-## In Scope
+## 范围内
 
-## Out Of Scope
+## 范围外
 
-## Main User Flows
+## 主要用户流程
 
-## Business Rules
+## 业务规则
 
-## Roles / Permissions
+## 角色 / 权限
 
-## Edge Cases
+## 边界情况
 
-## Open Questions
-
-## Acceptance Criteria
+## 待解决问题
 ```

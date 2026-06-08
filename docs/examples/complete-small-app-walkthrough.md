@@ -11,13 +11,13 @@
 - `docs/input/source-pm-user-management.md`
 
 ```md
-# PM Notes - User Management
+# PM 备注 - 用户管理
 
-Need a user management page for admins.
+需要一个面向管理员的后台用户管理页面。
 
-Admins should see users, search by name or email, and disable a user.
-Disabled users cannot log in.
-We do not need create/edit user profile in the first version.
+管理员应能查看用户列表，按姓名或邮箱搜索，并可禁用某个用户。
+被禁用的用户将无法登录。
+首个版本中，我们不需要创建/编辑用户资料的功能。
 ```
 
 ## 2. 需求
@@ -27,66 +27,66 @@ We do not need create/edit user profile in the first version.
 - `docs/requirements/2026-05-21-user-management.md`
 
 ```md
-# User Management Requirement
+# 用户管理需求
 
-## Goal
+## 目标
 
-Admins can view users, search users, and disable active users.
+管理员可查看用户、搜索用户并禁用启用的用户。
 
-## In Scope
+## 范围内
 
-- user list page
-- search by name or email
-- disable action for active users
-- disabled users cannot log in
+- 用户列表页面
+- 按姓名或邮箱搜索
+- 对启用用户的禁用操作
+- 禁用用户无法登录
 
-## Out Of Scope
+## 范围外
 
-- creating users
-- editing user profiles
-- bulk actions
+- 创建用户
+- 编辑用户资料
+- 批量操作
 
-## Business Rules
+## 业务规则
 
-- only admins can access the page
-- disabled users are blocked at login
-- disabling an already disabled user is not shown as an available action
+- 仅管理员可访问该页面
+- 禁用用户在登录时被阻止
+- 对于已禁用的用户，不显示可用的禁用操作
 
-## Roles / Permissions
+## 角色 / 权限
 
-- Admin: can access the page and disable active users.
-- Non-admin: cannot access the page.
+- 管理员：可访问该页面并禁用启用的用户。
+- 非管理员：无法访问该页面。
 
-## Data / Model Impact
+## 数据 / 模型影响
 
-- Existing user model must expose `id`, `name`, `email`, and `status`.
-- Disabling a user changes status from `active` to `disabled`.
-- No new database table is required for this slice.
+- 现有用户模型须暴露 `id`、`name`、`email` 和 `status` 字段。
+- 禁用操作会将用户状态从 `active` 改为 `disabled`。
+- 此切片无需新增数据库表。
 
-## API / Integration Impact
+## API / 集成影响
 
-- Requires a user list query endpoint.
-- Requires a disable-user command endpoint.
-- No external system integration is required for this slice.
+- 需要一个用户列表查询端点。
+- 需要一个禁用用户的命令端点。
+- 此切片无需外部系统集成。
 
-## States
+## 状态
 
-- Empty: show an empty state when no users match search.
-- Loading: show loading state while fetching users.
-- Error: show retryable error if user list query fails.
-- Permission denied: non-admin users see access denied instead of the user list.
+- 空状态：无匹配用户时显示空状态界面。
+- 加载中：获取用户列表时显示加载状态。
+- 错误：若用户列表查询失败，显示可重试的错误提示。
+- 权限拒绝：非管理员用户看到的是访问被拒绝的提示，而非用户列表。
 
-## Open Questions
+## 待解决问题
 
-- None blocking for the first slice.
+- 无阻塞首版切片的问题。
 
-## Acceptance Criteria
+## 验收标准
 
-- [ ] admin can open the user list page
-- [ ] search filters by name or email
-- [ ] admin can disable an active user
-- [ ] disabled user cannot log in
-- [ ] non-admin cannot access the page
+- [ ] 管理员可打开用户列表页面
+- [ ] 可按姓名或邮箱进行搜索过滤
+- [ ] 管理员可禁用某个启用的用户
+- [ ] 被禁用的用户无法登录
+- [ ] 非管理员无法访问该页面
 ```
 
 ## 3. 负责人文档更新

@@ -12,73 +12,73 @@
 ## 审计提示
 
 ```text
-You are auditing the routing effectiveness of a documentation index structure.
+您正在审计文档索引结构的路由有效性。
 
-## Step 1 — Read the index
+## 步骤 1 — 阅读索引
 
-Read the top-level index file (e.g. `INDEX.md` or `docs/index.md`) and every sub-index or README that it links to.
+阅读顶层索引文件（如 `INDEX.md` 或 `docs/index.md`）以及它链接到的每一个子索引或 README。
 
-For each indexed entry, record:
-- the stated purpose or task scenario
-- the path it points to
-- whether the target file exists and its content roughly matches the stated purpose
+对每个被索引的条目，记录以下内容：
+- 所声明的用途或任务场景
+- 它指向的路径
+- 目标文件是否存在，其内容是否与声明的用途大致匹配
 
-Return a coverage table with columns: | entry | stated purpose | target path | exists | matches purpose | notes |
+返回一个覆盖范围表格，包含以下列：| 条目 | 声明用途 | 目标路径 | 存在 | 用途匹配 | 备注 |
 
-Flag any entry where:
-- the target file does not exist
-- the target exists but its content does not match the stated purpose
-- the stated purpose is vague enough that a reader cannot decide if it is relevant
-- multiple entries point to the same target but describe it differently
-- an existing document that should be indexed is missing from the index
+标记任何存在以下问题的条目：
+- 目标文件不存在
+- 目标存在但其内容与声明的用途不匹配
+- 声明的用途过于模糊，读者无法判断其是否相关
+- 多个条目指向同一目标但描述不同
+- 一份本应被索引的现有文档在索引中缺失
 
-## Step 2 — Persona-based routing test
+## 步骤 2 — 基于角色的路由测试
 
-For each persona below, simulate a realistic information need, then trace the shortest path from the index to the answer. Record whether the persona succeeds and how many hops it takes.
+对下面的每个角色，模拟一个真实的信息需求，然后追踪从索引到答案的最短路径。记录该角色是否成功，以及需要多少跳。
 
-Persona A — New developer joining the project:
-- Need: "How do I set up my dev environment and run the project?"
-- Need: "Where is the code for [main feature area]?"
+角色 A — 新加入项目的开发者：
+- 需求：“如何搭建我的开发环境并运行项目？”
+- 需求：“[主要功能领域]的代码在哪里？”
 
-Persona B — AI agent starting a non-trivial task:
-- Need: "What are the current rules I must follow before writing code?"
-- Need: "Where do I find the owner doc for [technical area]?"
+角色 B — 启动一项非平凡任务的 AI 智能体：
+- 需求：“编写代码前，我必须遵守的当前规则是什么？”
+- 需求：“在哪儿可以找到[技术领域]的负责人文档？”
 
-Persona C — Reviewer auditing a completed slice:
-- Need: "Where is the plan for the current work and what were its closure gates?"
-- Need: "Where are recent implementation logs?"
+角色 C — 审计已完成切片的审查者：
+- 需求：“当前工作的计划在哪里，它的收尾关卡是什么？”
+- 需求：“最近的实施日志在哪里？”
 
-Persona D — Maintainer updating documentation:
-- Need: "What is the rule for when to update the index versus when to add a new document?"
-- Need: "Which documents are known to be stale or low-confidence?"
+角色 D — 更新文档的维护者：
+- 需求：“何时更新索引，何时添加新文档的规则是什么？”
+- 需求：“已知哪些文档是陈旧的或低置信度的？”
 
-For each persona need, return:
-| persona | need | starting point | hops | found | path taken | problem |
+对每个角色的需求，返回：
+| 角色 | 需求 | 起点 | 跳数 | 找到 | 所经路径 | 问题 |
 
-If a persona cannot reach the answer through the index alone, record the failure point and what was missing.
+如果某个角色无法仅通过索引到达答案，记录失败点及缺失的内容。
 
-## Step 3 — Structural quality checks
+## 步骤 3 — 结构性质量检查
 
-Check for:
-- orphan files: files in the directory tree that are not reachable from any index entry
-- stale references: index entries pointing to moved, renamed, or deleted files
-- depth imbalance: paths that require more than 3 hops from the top-level index to reach actionable content
-- duplication: the same rule or knowledge stated in multiple indexed files without cross-reference
-- category confusion: documents whose content belongs in a different directory than where the index places them
-- missing intermediate indexes: directories with more than ~10 files that lack their own README or catalog
+检查以下方面：
+- 孤立文件：目录树中存在，但无法从任何索引条目到达的文件
+- 过时引用：指向已移动、重命名或删除的文件的索引条目
+- 深度不均衡：从顶层索引到达可操作内容需要超过 3 跳的路径
+- 重复：相同的规则或知识在多个被索引文件中陈述，且没有交叉引用
+- 分类混乱：文档内容所属的目录与索引放置它的目录不符
+- 缺少中间索引：文件数量超过约 10 个但缺少自己的 README 或目录的目录
 
-## Step 4 — Return findings
+## 步骤 4 — 返回发现
 
-Return findings ordered by severity:
+按严重程度排序返回发现：
 
-For each finding include:
-- title
-- affected index entry or file path
-- current gap
-- impact on routing effectiveness
-- recommendation
+对每项发现包含：
+- 标题
+- 受影响的索引条目或文件路径
+- 当前缺陷
+- 对路由有效性的影响
+- 建议
 
-If no findings remain, say that explicitly and note residual risks.
+如果没有发现任何问题，明确说明这一点，并记录残余风险。
 ```
 
 ## 自定义说明

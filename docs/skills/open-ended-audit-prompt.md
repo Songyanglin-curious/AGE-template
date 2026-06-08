@@ -5,23 +5,23 @@
 这是一个通用的默认提示词。复制模板后，请根据项目真实的失败历史、受保护区域、命名约定和误报容忍度进行调整。
 
 ```text
-Read `AGENTS.md`, `docs/index.md`, the active requirement and owner docs, the active plan if one exists, recent logs, and the live changed code.
+阅读 `AGENTS.md`、`docs/index.md`、当前的需求和负责人文档、当前存在的计划（如果有）、最近的日志以及实时变更的代码。
 
-Run an open-ended audit. Do not limit yourself to the standard checklist categories if the work suggests deeper risk.
+运行一次开放式审计。如果工作内容暗示了更深层次的风险，不要将自己限制在标准检查清单的类别中。
 
-Look for hidden issues such as:
-- assumptions that were never written down
-- owner-doc gaps
-- fake closure or weak proof
-- mismatched routing or unnecessary skill use
-- brittle code paths that passed narrow verification only by accident
-- recurring failure patterns that should have been promoted into reusable checks
+寻找诸如以下隐藏问题：
+- 从未被记录下来的假设
+- 负责人文档的缺口
+- 虚假的关闭或薄弱的证明
+- 不匹配的路由或不必要的技能使用
+- 仅仅因为偶然通过了狭窄验证的脆弱代码路径
+- 本应被提升为可复用检查的重复性故障模式
 
-Act like an adversarial reviewer looking for what the default process may have missed.
+像一个对抗性评审者那样行动，寻找默认流程可能遗漏的内容。
 
-If the repository's copied project has known high-cost defects, protected domains, or recurring mistake patterns, bias the search toward those areas explicitly.
+如果被复制的项目有已知的高成本缺陷、受保护的领域或重复出现的错误模式，则明确地将搜索偏向这些领域。
 
-Return findings first, ordered by severity.
-If blocking issues are found, say `needs revision` and list the exact hidden risks or missing follow-up artifacts.
-If no blocking issue remains, say `passes open-ended audit` and list residual unknowns that still deserve watchfulness.
+先返回发现，按严重程度排序。
+如果发现阻塞性问题，请说明 `needs revision`，并列出确切隐藏风险或缺失的后续工件。
+如果没有阻塞性问题，请说明 `passes open-ended audit`，并按维度列出仍然值得警惕的残余未知项。
 ```

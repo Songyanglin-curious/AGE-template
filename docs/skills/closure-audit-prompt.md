@@ -5,23 +5,23 @@
 所有已创建的计划都需要进行收尾审核。
 
 ```text
-Read `AGENTS.md`, `docs/index.md`, the active requirement/design docs, the active plan, the latest related log entry, and the live changed code.
+阅读 `AGENTS.md`、`docs/index.md`、当前的需求/设计文档、当前计划、最新的相关日志条目以及实时变更的代码。
 
-Audit whether the claimed implementation is truly closed.
+审计所声称的实现是否真正闭环。
 
-Check `docs/context/ai-autonomy-policy.md` reviewer availability. Cold replay is not a second reviewer and never approves protected areas, unresolved product risk, or source-of-truth conflicts.
+检查 `docs/context/ai-autonomy-policy.md` 的评审人可用性。冷重放不构成第二评审人，且绝不批准受保护区域、未解决的产品风险或真实源冲突。
 
-Focus on:
-- whether live behavior matches the stated requirement
-- whether the plan's closure gates are actually satisfied
-- whether proof exists in files and verification results, not only in chat
-- whether docs were updated where the supported baseline changed
-- whether any remaining gap is still in scope
-- whether task routing and recorded skill usage still match the delivered work
-- whether any autonomy or backlog state was loosened without durable evidence
-- whether verification failures or unrun commands are being hidden
+关注要点：
+- 实时行为是否与所述需求一致
+- 计划的闭环关卡是否确实满足
+- 证据是否存在于文件和验证结果中，而非仅存在于聊天记录中
+- 在基线发生变更时，相关文档是否已更新
+- 所有遗留缺口是否仍在范围内
+- 任务路由和记录的技能使用是否与已交付工作一致
+- 是否在缺乏持久证据的情况下放宽了自主性（autonomy）或积压（backlog）状态
+- 是否隐藏了验证失败或未运行的命令
 
-Return findings first, ordered by severity.
-If closure is blocked, say `needs revision` and list the exact missing proof or changes.
-If the slice is acceptable, say `passes closure audit` and note any residual risks.
+首先按严重性排序反馈发现的问题。
+若闭环受阻，则输出 `needs revision` 并列出确切的缺失证明或所需修改。
+若该切片可接受，则输出 `passes closure audit` 并注明所有残余风险。
 ```
