@@ -61,6 +61,8 @@
 - [ ] `docs/analysis/`
 - [ ] `docs/retrospectives/`
 - [ ] `docs/lessons/`
+- [ ] `docs/notes/`
+- [ ] `docs/lab/`
 
 ## AI 阻止条件
 

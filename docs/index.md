@@ -98,6 +98,8 @@
 - `docs/testing/` - 可选的探索性测试和手动测试笔记
 - `docs/bugs/` - 复杂的回归历史记录和根因笔记
 - `docs/analysis/` - 可选的调查、比较和设计权衡
+- `docs/notes/` - 可选的学习笔记和知识点积累
+- `docs/lab/` - 可选的测试/实验环境搭建说明
 - `docs/retrospectives/` - 可选的事后交付差距分析和流程改进
 - `docs/archive/` - 由人工决定移至此处的不活跃文档；保留作历史参考
 
